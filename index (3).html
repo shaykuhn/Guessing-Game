@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <script>
+    // repeat the entire game loop
+    let repeat = "y";
+    while (repeat == "y"){
+      // generate random number for game
+      randomNumber = Math.floor(Math.random() * 10) +1;
+
+      // prompt user for guess
+      let guess = prompt("Guess a number between 1 and 10.");
+      let count = 1;
+      while (true){
+        // id guess is too high
+        if (guess > randomNumber){
+         guess = prompt("Too high, guess again.");
+          count ++;
+        }
+        // id guess is too low
+        else if (guess < randomNumber){
+          guess = prompt("Too low, guess again.")
+          count ++;
+        }
+        // if guess is correct, display count and break loop
+        else if (guess == randomNumber){
+          alert("You guessed the number in " + count + " tries.");
+         break;
+        }
+        else {
+          alert("Invalid input");
+          break;
+        }
+      }
+    // ask to loop entire game
+    repeat = prompt("Would you like to play again? y/n");
+    }
+  </script>
+</body>
+
+</html>
